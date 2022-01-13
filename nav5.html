@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav 5</title>
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        box-sizing: border-box;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: all ease 0.3s;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1.3% 9%;
+        background: #fff;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      }
+      .header .logo {
+        font-size: 3rem;
+        font-weight: bolder;
+        color: #403a0f;
+      }
+      .header .logo i {
+        color: #d6472e;
+      }
+      .header .navbar a {
+        font-size: 2rem;
+        margin: 0 2rem;
+        color: #403a0f;
+      }
+      .header .navbar a:hover {
+        color: #d6472e;
+      }
+      .header .icons div {
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        border-radius: 0.5rem;
+        background: #eee;
+        color: #403a0f;
+        font-size: 2rem;
+        margin-left: 0.3rem;
+        cursor: pointer;
+        text-align: center;
+      }
+      .header .icons div:hover {
+        background: #d6472e;
+        color: #fff;
+      }
+      #menu-btn {
+        display: none;
+      }
+      .header .search-form {
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 50rem;
+        height: 5rem;
+        background: #fff;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0.5rem 1rem #333;
+      }
+      .header .search-form.active {
+        right: 2rem;
+        transition: 0.4s linear;
+      }
+      .header .search-form input {
+        height: 100%;
+        width: 100%;
+        background: none;
+        text-transform: none;
+        font-size: 1.6rem;
+        color: #403a0f;
+        padding: 0 1.5rem;
+      }
+      .header .search-form label {
+        font-size: 2.2rem;
+        padding-right: 1.5rem;
+        color: #403a0f;
+        cursor: pointer;
+      }
+      .header .search-form label:hover {
+        color: #d6472e;
+      }
+      .header .login-form {
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 35rem;
+        box-shadow: 0 0.5rem 1rem #333;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        background: #fff;
+        text-align: center;
+      }
+      .header .login-form.active {
+        right: 2rem;
+        transition: 0.4s linear;
+      }
+      .header .login-form h3 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: #403a0f;
+      }
+      .header .login-form .box {
+        width: 100%;
+        margin: 0.7rem 0;
+        background: #eee;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        font-size: 1.6rem;
+        color: #403a0f;
+        text-transform: none;
+      }
+      .header .login-form p {
+        font-size: 1.4rem;
+        padding: 0.5rem 0;
+        color: #333;
+      }
+      .header .login-form p a {
+        color: #d6472e;
+        text-decoration: underline;
+      }
+      /* RESPONSIVE MEDIA QUERIES  */
+      @media (max-width: 991px) {
+        html {
+          font-size: 55%;
+        }
+        .header {
+          padding: 1.3%;
+        }
+      }
+      @media (max-width: 768px) {
+        #menu-btn {
+          display: inline-block;
+        }
+        .header .navbar {
+          position: absolute;
+          top: 105%;
+          right: -110%;
+          width: 20rem;
+          box-shadow: var(--box-shadow);
+          border-radius: 0.5rem;
+          background: #eb7662;
+        }
+        .header .navbar.active {
+          right: 0rem;
+          transition: 0.4s linear;
+        }
+        .header .navbar a {
+          font-size: 2rem;
+          margin: 2rem 2.5rem;
+          display: block;
+          color: #fff;
+        }
+        .header .search-form {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo"> <i class="fas fa-users"></i> SheikhTech </a>
+      <ul class="navbar">
+        <a href="#home">home</a>
+        <a href="#features">features</a>
+        <a href="#products">products</a>
+        <a href="#categories">categories</a>
+        <a href="#review">review</a>
+      </ul>
+      <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-user" id="login-btn"></div>
+      </div>
+      <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box" class="fas fa-search"></label>
+      </form>
+      <form action="" class="login-form">
+        <h3>login now</h3>
+        <input type="email" placeholder="your email" class="box" />
+        <input type="password" placeholder="your password" class="box" />
+        <p>forget your password <a href="#">click here</a></p>
+        <p>don't have an account <a href="#">create now</a></p>
+        <input type="submit" value="login now" class="btn" />
+      </form>
+    </header>
+
+    <script>
+      let searchForm = document.querySelector(".search-form");
+      document.querySelector("#search-btn").onclick = () => {
+        searchForm.classList.toggle("active");
+        loginForm.classList.remove("active");
+        navbar.classList.remove("active");
+      };
+      let loginForm = document.querySelector(".login-form");
+      document.querySelector("#login-btn").onclick = () => {
+        loginForm.classList.toggle("active");
+        searchForm.classList.remove("active");
+        navbar.classList.remove("active");
+      };
+      let navbar = document.querySelector(".navbar");
+      document.querySelector("#menu-btn").onclick = () => {
+        navbar.classList.toggle("active");
+        searchForm.classList.remove("active");
+        loginForm.classList.remove("active");
+      };
+      window.onscroll = () => {
+        searchForm.classList.remove("active");
+        loginForm.classList.remove("active");
+        navbar.classList.remove("active");
+      };
+    </script>
+  </body>
+</html>

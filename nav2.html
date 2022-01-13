@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav 2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      ul li {
+        list-style: none;
+      }
+      body {
+        background-color: #333;
+      }
+      #open-btn {
+        font-size: 2rem;
+        cursor: pointer;
+        margin-left: 30px;
+        display: inline-block;
+        border: 1px solid #fff;
+        padding: 2px 10px;
+        color: #fff;
+        background-color: #333;
+        border-radius: 5px;
+        margin-top: 10px;
+        transition: all 0.3s;
+      }
+      .side-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0px;
+        background-color: #222;
+        z-index: 1;
+        padding-top: 100px;
+        overflow-x: hidden;
+        transition: all 0.3s;
+      }
+      .side-menu a {
+        padding: 8px 8px 8px 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-decoration: none;
+        font-size: 20px;
+        color: #999;
+        display: block;
+      }
+      .side-menu a:hover {
+        color: #fff;
+      }
+      #close-btn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        color: #fff;
+        font-size: 3rem;
+        margin-left: 36px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="open-btn" onclick="openNav()">&#9776;</div>
+    <nav>
+      <ul id="menu" class="side-menu">
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Skills</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Contact</a></li>
+        <div id="close-btn" onclick="closeNav()">&times;</div>
+      </ul>
+    </nav>
+
+    <script>
+      function openNav() {
+        document.getElementById("menu").style.width = "300px";
+        document.getElementById("open-btn").innerHTML = "";
+      }
+      function closeNav() {
+        document.getElementById("menu").style.width = "0px";
+        document.getElementById("open-btn").innerHTML = "&#9776";
+      }
+    </script>
+  </body>
+</html>
